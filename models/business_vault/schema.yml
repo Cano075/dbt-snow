@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: bridge_customer_product
+    description: "Bridge que conecta clientes y productos a través de pedidos."
+    columns:
+      - name: hk_customer
+        description: "Hash key del cliente (desde hub_customer)"
+      - name: hk_product
+        description: "Hash key del producto (desde hub_product)"
+      - name: first_order_date
+        description: "Primera fecha de compra registrada."
+      - name: last_order_date
+        description: "Última fecha de compra registrada."
+      - name: total_orders
+        description: "Número total de pedidos del cliente para ese producto."
