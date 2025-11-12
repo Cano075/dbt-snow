@@ -1,4 +1,4 @@
-{% macro snowflake__create_table_as(relation, sql) -%}
-  create or replace transient table {{ relation }} as
-  {{ sql }}
+{% macro create_table_as(temporary, relation, sql) -%}
+    create or replace {{ temporary }} table {{ relation }} as
+    {{ sql }}
 {%- endmacro %}
