@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: staging
+    database: MASTERCLASS
+    schema: STAGING
+    tables:
+      - name: customers
+      - name: products
+      - name: orders
