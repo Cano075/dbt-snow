@@ -39,15 +39,22 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_demo:
     +persist_docs: {relation: true}
+    # Vistas de staging (limpieza ligera). Si quieres que vivan en RAW_VAULT:
     staging:
       +materialized: view
       +schema: STAGING
+
+    # Raw Vault (hubs, links, sats) como tablas en RAW_VAULT
     raw_vault:
       +materialized: table
       +schema: RAW_VAULT
+
+    # Business Vault como vistas en BUSINESS_VAULT
     business_vault:
       +materialized: view
       +schema: BUSINESS_VAULT
-    marts:
+
+    # Mart como tablas en MART
+    mart:
       +materialized: table
       +schema: MART

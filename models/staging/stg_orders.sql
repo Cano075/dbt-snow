@@ -1,4 +1,4 @@
-{{ config(schema='RAW_VAULT', materialized='view') }}
+{{ config(schema='STAGING', materialized='view') }}
 
 SELECT
   order_id,
@@ -7,4 +7,4 @@ SELECT
   TO_TIMESTAMP_NTZ(order_date) AS order_date,
   quantity::NUMBER(18,0) AS quantity,
   amount::NUMBER(18,2)  AS amount
-FROM {{ source('staging', 'orders') }}
+FROM {{ source('landing', 'orders') }}

@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: staging
+  - name: landing
     database: MASTERCLASS
-    schema: RAW_VAULT
+    schema: STAGING
     tables:
       - name: customers
       - name: products
