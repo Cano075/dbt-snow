@@ -3,7 +3,7 @@ version: 2
 sources:
   - name: staging
     database: MASTERCLASS
-    schema: STAGING
+    schema: RAW_VAULT
     tables:
       - name: customers
       - name: products

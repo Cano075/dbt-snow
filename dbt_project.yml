@@ -41,13 +41,13 @@ models:
     +persist_docs: {relation: true}
     staging:
       +materialized: view
-      +schema: RV
+      +schema: STAGING
     raw_vault:
       +materialized: table
-      +schema: RV
+      +schema: RAW_VAULT
     business_vault:
       +materialized: view
-      +schema: BV
+      +schema: BUSINESS_VAULT
     marts:
       +materialized: table
       +schema: MART
