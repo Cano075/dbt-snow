@@ -41,7 +41,7 @@ models:
     +persist_docs: {relation: true}
     staging:
       +materialized: view
-      +schema: RV
+      +schema: STG
     raw_vault:
       +materialized: table
       +schema: RV
