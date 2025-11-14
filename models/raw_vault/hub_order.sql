@@ -5,7 +5,7 @@ src_pk: ORDER_HK
 src_nk: ORDER_ID
 src_ldts: LOAD_DATE
 src_source: RECORD_SOURCE
-source_model: {{ ref('v_stg_orders') }}
+source_model: v_stg_orders
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

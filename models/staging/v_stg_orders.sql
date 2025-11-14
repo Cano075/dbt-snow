@@ -12,6 +12,19 @@ hashed_columns:
   CUSTOMER_HK: "CUSTOMER_ID"
   PRODUCT_HK: "PRODUCT_ID"
   STORE_HK: "STORE_ID"
+
+  LNK_ORDER_CUSTOMER_HK:
+    - "ORDER_ID"
+    - "CUSTOMER_ID"
+
+  LNK_ORDER_PRODUCT_HK:
+    - "ORDER_ID"
+    - "PRODUCT_ID"
+
+  LNK_ORDER_STORE_HK:
+    - "ORDER_ID"
+    - "STORE_ID"
+
   ORDER_HASHDIFF:
     is_hashdiff: true
     columns:
