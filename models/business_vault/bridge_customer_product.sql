@@ -12,7 +12,7 @@ WITH orders_enriched AS (
     FROM {{ ref('lnk_order_customer') }} AS lnk_order_customer
     JOIN {{ ref('lnk_order_product') }}  AS lnk_order_product
         ON lnk_order_customer.hk_order = lnk_order_product.hk_order
-    JOIN {{ ref('sat_order') }} AS sat_order
+    JOIN {{ ref('sat_order_facts') }} AS sat_order
         ON lnk_order_customer.hk_order = sat_order.hk_order
 )
 
