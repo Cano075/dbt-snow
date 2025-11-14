@@ -6,17 +6,17 @@
 {%- set yaml_metadata -%}
 source_model: hub_customer
 src_pk: CUSTOMER_HK
-as_of_dates_table: AS_OF_DATE
+as_of_dates_table: as_of_date
 
 satellites:
-  SAT_CUSTOMER_DETAILS:
+  sat_customer_details:
     pk:
       PK: CUSTOMER_HK
     ldts:
       LDTS: LOAD_DATE
 
 stage_tables_ldts:
-  V_STG_CUSTOMERS: LOAD_DATE
+  v_stg_customers: LOAD_DATE
 
 src_ldts: LOAD_DATE
 {%- endset -%}
