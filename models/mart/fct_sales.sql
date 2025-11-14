@@ -32,8 +32,8 @@ dim_product AS (
         PRODUCT_HK,
         PRODUCT_NAME,
         BRAND,
-        CATEGORY,
         PACKAGE_TYPE,
+        RETURNABILITY,
         LIST_PRICE,
         LOAD_DATE,
         ROW_NUMBER() OVER (
@@ -86,8 +86,8 @@ SELECT
     -- Product attrs
     p.PRODUCT_NAME,
     p.BRAND,
-    p.CATEGORY,
     p.PACKAGE_TYPE,
+    p.RETURNABILITY,
     p.LIST_PRICE,
 
     -- Store attrs

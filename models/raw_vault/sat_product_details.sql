@@ -9,8 +9,8 @@ src_hashdiff:
 src_payload:
   - "PRODUCT_NAME"
   - "BRAND"
-  - "CATEGORY"
   - "PACKAGE_TYPE"
+  - "RETURNABILITY"
   - "LIST_PRICE"
 src_eff: "EFFECTIVE_FROM"
 src_ldts: "LOAD_DATE"

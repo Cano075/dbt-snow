@@ -14,8 +14,8 @@ hashed_columns:
     columns:
       - "PRODUCT_NAME"
       - "BRAND"
-      - "CATEGORY"
       - "PACKAGE_TYPE"
+      - "RETURNABILITY"
       - "LIST_PRICE"
 {%- endset -%}
 
