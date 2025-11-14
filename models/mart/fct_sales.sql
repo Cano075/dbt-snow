@@ -8,25 +8,22 @@ WITH bridge AS (
     FROM {{ ref('bridge_customer_product_store') }}
 ),
 
--- Dimensión Customer (última versión)
-dim_customer AS (
+-- Dimensión Customer (última versión con PIT)
+pit_customer_today AS (
     SELECT
         CUSTOMER_HK,
-        CUSTOMER_NAME,
-        SEGMENT,
-        REGION,
-        LOAD_DATE,
-        ROW_NUMBER() OVER (
-            PARTITION BY CUSTOMER_HK
-            ORDER BY LOAD_DATE DESC
-        ) AS rn
-    FROM {{ ref('sat_customer_details') }}
+        SAT_CUSTOMER_DETAILS_PK,
+        SAT_CUSTOMER_DETAILS_LDTS
+    FROM BUSINESS_VAULT.PIT_CUSTOMER
+    WHERE AS_OF_DATE = CURRENT_DATE()
 ),
 
 current_customer AS (
-    SELECT *
-    FROM dim_customer
-    WHERE rn = 1
+    SELECT s.*
+    FROM RAW_VAULT.SAT_CUSTOMER_DETAILS s
+    JOIN pit_customer_today p
+      ON s.CUSTOMER_HK = p.SAT_CUSTOMER_DETAILS_PK
+     AND s.LOAD_DATE   = p.SAT_CUSTOMER_DETAILS_LDTS
 ),
 
 -- Dimensión Product (última versión)
